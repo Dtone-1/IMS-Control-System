@@ -1,0 +1,16 @@
+{
+  "codename": "Font2",
+  "ttf_path": "/assets/AiDianFengYaHeiChangTi(ShangYongMianFei)-2.ttf",
+  "bin_path": "/assets\\ui_font_Font2.bin",
+  "c_path": "/assets\\ui_font_Font2.c",
+  "cfg_path": "/assets\\ui_font_Font2.fcfg",
+  "size": 18,
+  "bpp": 4,
+  "letters": 5,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "\n返回物质识别与分析暂停扫描开始保存清空库学确认习校准主界面谱图",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}

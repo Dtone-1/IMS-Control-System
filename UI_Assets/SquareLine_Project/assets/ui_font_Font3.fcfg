@@ -1,0 +1,16 @@
+{
+  "codename": "Font3",
+  "ttf_path": "/assets/AiDianFengYaHeiChangTi(ShangYongMianFei)-2.ttf",
+  "bin_path": "/assets\\ui_font_Font3.bin",
+  "c_path": "/assets\\ui_font_Font3.c",
+  "cfg_path": "/assets\\ui_font_Font3.fcfg",
+  "size": 16,
+  "bpp": 4,
+  "letters": 5,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "\n识别物质置信度实时浓度漂移时迁移率间信号幅名称值录入区已存列表区点击输入",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}
