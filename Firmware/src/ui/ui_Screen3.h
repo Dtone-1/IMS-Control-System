@@ -2,6 +2,8 @@
 // SquareLine Studio version: SquareLine Studio 1.5.4
 // LVGL version: 8.3.11
 // Project name: IMS_UI
+//
+// Screen3 声明文件：由 SquareLine Studio 生成，声明物质保存界面的 LVGL 对象。
 
 #ifndef UI_SCREEN3_H
 #define UI_SCREEN3_H
@@ -29,12 +31,6 @@ extern lv_obj_t * ui_Label27;
 extern void ui_event_Button13(lv_event_t * e);
 extern lv_obj_t * ui_Button13;
 extern lv_obj_t * ui_Label30;
-extern lv_obj_t * ui_Panel15;
-extern lv_obj_t * ui_Label29;
-extern lv_obj_t * ui_Label25;
-extern lv_obj_t * ui_Panel16;
-extern lv_obj_t * ui_Label32;
-extern lv_obj_t * ui_Label28;
 extern lv_obj_t * ui_Panel17;
 extern lv_obj_t * ui_Label33;
 extern void ui_event_TextArea1(lv_event_t * e);
@@ -42,9 +38,17 @@ extern lv_obj_t * ui_TextArea1;
 extern lv_obj_t * ui_Panel18;
 extern lv_obj_t * ui_Label34;
 extern lv_obj_t * ui_Panel13;
-extern lv_obj_t * ui_Panel27;
-extern lv_obj_t * ui_Label51;
-extern lv_obj_t * ui_Label38;
+extern void ui_event_Button5(lv_event_t * e);
+extern lv_obj_t * ui_Button5;
+extern lv_obj_t * ui_Label5;
+extern void ui_event_Button6(lv_event_t * e);
+extern lv_obj_t * ui_Button6;
+extern lv_obj_t * ui_Label6;
+extern void ui_event_Button7(lv_event_t * e);
+extern lv_obj_t * ui_Button7;
+extern lv_obj_t * ui_Label7;
+extern lv_obj_t * ui_Label10;
+extern lv_obj_t * ui_Panel3;
 extern void ui_event_Keyboard2(lv_event_t * e);
 extern lv_obj_t * ui_Keyboard2;
 // CUSTOM VARIABLES

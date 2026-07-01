@@ -2,6 +2,8 @@
 // SquareLine Studio version: SquareLine Studio 1.5.4
 // LVGL version: 8.3.11
 // Project name: IMS_UI
+//
+// Screen1 声明文件：由 SquareLine Studio 生成，声明入口/首页界面的 LVGL 对象。
 
 #ifndef UI_SCREEN1_H
 #define UI_SCREEN1_H
@@ -17,17 +19,9 @@ extern lv_obj_t * ui_Screen1;
 extern void ui_event_Button1(lv_event_t * e);
 extern lv_obj_t * ui_Button1;
 extern lv_obj_t * ui_Label1;
-extern lv_obj_t * ui_Button3;
-extern lv_obj_t * ui_Label3;
 extern void ui_event_Button4(lv_event_t * e);
 extern lv_obj_t * ui_Button4;
 extern lv_obj_t * ui_Label4;
-extern lv_obj_t * ui_Button5;
-extern lv_obj_t * ui_Label5;
-extern lv_obj_t * ui_Button6;
-extern lv_obj_t * ui_Label6;
-extern lv_obj_t * ui_Button7;
-extern lv_obj_t * ui_Label7;
 extern lv_obj_t * ui_Label2;
 // CUSTOM VARIABLES
 

@@ -2,6 +2,11 @@
 // SquareLine Studio version: SquareLine Studio 1.5.4
 // LVGL version: 8.3.11
 // Project name: IMS_UI
+//
+// 说明：本目录文件由 SquareLine Studio 自动生成。
+// Screen1 通常是首页/入口，Screen2 是实时谱图分析界面，Screen3 是物质保存界面。
+// 业务逻辑尽量放在 src/UI_manager.cpp、src/UI_FeatureDisplay.cpp 和 main.cpp 中，
+// 避免后续重新生成 UI 时覆盖手写逻辑。
 
 #ifndef _IMS_UI_UI_H
 #define _IMS_UI_UI_H

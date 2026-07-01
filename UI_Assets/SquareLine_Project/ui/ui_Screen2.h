@@ -23,28 +23,14 @@ extern void ui_event_Button9(lv_event_t * e);
 extern lv_obj_t * ui_Button9;
 extern lv_obj_t * ui_Label11;
 extern lv_obj_t * ui_Panel2;
-extern lv_obj_t * ui_Panel3;
-extern lv_obj_t * ui_Label10;
-extern lv_obj_t * ui_Panel5;
-extern lv_obj_t * ui_Label14;
-extern lv_obj_t * ui_Panel6;
-extern lv_obj_t * ui_Label15;
-extern lv_obj_t * ui_Panel7;
-extern lv_obj_t * ui_Label16;
-extern lv_obj_t * ui_Label18;
-extern lv_obj_t * ui_Panel8;
-extern lv_obj_t * ui_Label17;
-extern lv_obj_t * ui_Label19;
-extern lv_obj_t * ui_Panel10;
-extern lv_obj_t * ui_Label22;
-extern lv_obj_t * ui_Label20;
+extern void ui_event_Button10(lv_event_t * e);
+extern lv_obj_t * ui_Button10;
+extern lv_obj_t * ui_Label23;
 extern lv_obj_t * ui_Panel4;
 extern lv_obj_t * ui_Chart1;
 extern lv_obj_t * ui_Label12;
 extern lv_obj_t * ui_Label13;
-extern void ui_event_Button10(lv_event_t * e);
-extern lv_obj_t * ui_Button10;
-extern lv_obj_t * ui_Label23;
+extern lv_obj_t * ui_Panel5;
 // CUSTOM VARIABLES
 
 #ifdef __cplusplus

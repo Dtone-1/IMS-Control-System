@@ -11,6 +11,11 @@ extern "C" {
 #endif
 
 void OnScanClick(lv_event_t * e);
+void OnSaveSubstance(lv_event_t * e);
+void OnAddSampleClick(lv_event_t * e);
+void OnNewAnalyteClick(lv_event_t * e);
+void OnSaveAsNewClick(lv_event_t * e);
+void OnConfirmSave(lv_event_t * e);
 
 #ifdef __cplusplus
 } /*extern "C"*/

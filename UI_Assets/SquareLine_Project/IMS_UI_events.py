@@ -7,10 +7,14 @@ def OnConfirmSave(event_struct):
     return
 
 
-def OnGoToSave(event_struct):
+def OnSaveSubstance(event_struct):
     return
 
 
-def OnSaveSubstance(event_struct):
+def OnNewAnalyteClick(event_struct):
+    return
+
+
+def OnSaveAsNewClick(event_struct):
     return
 

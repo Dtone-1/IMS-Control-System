@@ -1,6 +1,16 @@
 /**
  * @file lv_conf.h
  * Configuration file for v8.3.11
+ *
+ * 本文件是 LVGL 8.3.11 的配置文件。
+ * 项目通过 platformio.ini 中的 LV_CONF_INCLUDE_SIMPLE 和 -I src 让 LVGL 使用这个配置。
+ *
+ * 本次只补充注释，不修改任何配置值。与本项目最相关的配置包括：
+ * - LV_COLOR_DEPTH=16：匹配 ST7796/TFT_eSPI 常用 RGB565 显示格式；
+ * - LV_MEM_CUSTOM=0、LV_MEM_SIZE=48KB：LVGL 内部对象/样式使用内置内存池；
+ * - LV_TICK_CUSTOM=0：main.cpp 的 UI 任务手动调用 lv_tick_inc(5)；
+ * - Montserrat 字体开关：SquareLine UI 和自定义特征标签使用这些字体；
+ * - LV_USE_CHART/LABEL/BTN/TEXTAREA/KEYBOARD：当前 UI 必需控件。
  */
 
 /*
@@ -25,6 +35,7 @@
 
 /*Color depth: 1 (1 byte per pixel), 8 (RGB332), 16 (RGB565), 32 (ARGB8888)*/
 #define LV_COLOR_DEPTH 16
+/* IMS_CS 使用 TFT_eSPI 推送 RGB565 数据，因此颜色深度保持 16bit。 */
 
 /*Swap the 2 bytes of RGB565 color. Useful if the display has an 8-bit interface (e.g. SPI)*/
 #define LV_COLOR_16_SWAP 0
@@ -47,9 +58,11 @@
 
 /*1: use custom malloc/free, 0: use the built-in `lv_mem_alloc()` and `lv_mem_free()`*/
 #define LV_MEM_CUSTOM 0
+/* 使用 LVGL 内置内存池。注意这不等同于 main.cpp 中的 TFT 绘制缓冲，后者由 heap_caps_malloc 分配。 */
 #if LV_MEM_CUSTOM == 0
     /*Size of the memory available for `lv_mem_alloc()` in bytes (>= 2kB)*/
     #define LV_MEM_SIZE (48U * 1024U)          /*[bytes]*/
+    /* LVGL 对象、样式和内部临时分配的内存池大小。过小会导致对象创建失败。 */
 
     /*Set an address for the memory pool instead of allocating it as a normal array. Can be in external SRAM too.*/
     #define LV_MEM_ADR 0     /*0: unused*/
@@ -79,13 +92,16 @@
 
 /*Default display refresh period. LVG will redraw changed areas with this period time*/
 #define LV_DISP_DEF_REFR_PERIOD 30      /*[ms]*/
+/* 默认显示刷新周期。实际刷屏由 main.cpp 注册的 my_disp_flush() 调用 TFT_eSPI 完成。 */
 
 /*Input device read period in milliseconds*/
 #define LV_INDEV_DEF_READ_PERIOD 30     /*[ms]*/
+/* 默认输入设备读取周期。触摸读取函数在 main.cpp 的 my_touchpad_read() 中注册。 */
 
 /*Use a custom tick source that tells the elapsed time in milliseconds.
  *It removes the need to manually update the tick with `lv_tick_inc()`)*/
 #define LV_TICK_CUSTOM 0
+/* 当前项目不使用 LVGL 自定义 tick 源，而是在 UI 任务中周期性调用 lv_tick_inc(5)。 */
 #if LV_TICK_CUSTOM
     #define LV_TICK_CUSTOM_INCLUDE "Arduino.h"         /*Header for the system time function*/
     #define LV_TICK_CUSTOM_SYS_TIME_EXPR (millis())    /*Expression evaluating to current system time in ms*/
@@ -273,6 +289,7 @@
 /*Add a custom handler when assert happens e.g. to restart the MCU*/
 #define LV_ASSERT_HANDLER_INCLUDE <stdint.h>
 #define LV_ASSERT_HANDLER while(1);   /*Halt by default*/
+/* LVGL 断言失败会停住。业务代码中仍应避免传入空 LVGL 对象，尤其是 ui_init() 前不要刷新 UI。 */
 
 /*-------------
  * Others
@@ -400,6 +417,7 @@
 
 /*Always set a default font*/
 #define LV_FONT_DEFAULT &lv_font_montserrat_14
+/* 默认字体。UI_FeatureDisplay 中也显式使用 montserrat_12/14 显示特征文本。 */
 
 /*Enable handling large font and/or fonts with a lot of characters.
  *The limit depends on the font size, font face and bpp.
@@ -430,6 +448,7 @@
  * - LV_TXT_ENC_ASCII
  */
 #define LV_TXT_ENC LV_TXT_ENC_UTF8
+/* 字符串使用 UTF-8。源文件中的中文注释不参与 UI 显示，但 UI 文本也应保持 UTF-8。 */
 
 /*Can break (wrap) texts on these chars*/
 #define LV_TXT_BREAK_CHARS " ,.;:-_"
@@ -535,12 +554,14 @@
 #endif  /*LV_USE_CALENDAR*/
 
 #define LV_USE_CHART      1
+/* 当前项目的 IMS 谱图使用 LVGL chart 控件显示，不能关闭。 */
 
 #define LV_USE_COLORWHEEL 1
 
 #define LV_USE_IMGBTN     1
 
 #define LV_USE_KEYBOARD   1
+/* Screen3 输入新物质名称需要 LVGL keyboard。 */
 
 #define LV_USE_LED        1
 

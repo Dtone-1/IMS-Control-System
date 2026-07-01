@@ -2,6 +2,10 @@
 // SquareLine Studio version: SquareLine Studio 1.5.4
 // LVGL version: 8.3.11
 // Project name: IMS_UI
+//
+// 说明：这是 SquareLine Studio 生成的 UI 初始化入口。
+// ui_init() 创建 Screen1/Screen2/Screen3 并加载初始界面。
+// 不建议在本文件大量手写业务代码，避免下次从 SquareLine 重新导出时丢失。
 
 #include "ui.h"
 #include "ui_helpers.h"
